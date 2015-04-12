@@ -102,3 +102,11 @@ if (bio.skills.length > 0) {
 } else {
 	console.log("Something in Skill's failed");
 }
+
+for (job in work.jobs) {
+	$("#workExperience").append(HTMLworkStart);
+	var formattedJob = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+	formattedJob = formattedJob + HTMLworkTitle.replace("%data%", work.jobs[job].title);
+	$(".work-entry:last").append(formattedJob);
+}
+

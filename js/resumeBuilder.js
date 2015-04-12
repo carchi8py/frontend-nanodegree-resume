@@ -106,19 +106,29 @@ if (bio.skills.length > 0) {
 	console.log("Something in Skill's failed");
 }
 
-for (job in work.jobs) {
-	$("#workExperience").append(HTMLworkStart);
-	var formattedJob = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-	formattedJob = formattedJob + HTMLworkTitle.replace("%data%", work.jobs[job].title);
-	$(".work-entry:last").append(formattedJob);
+function displayWork() {
+	for (job in work.jobs) {
+		$("#workExperience").append(HTMLworkStart);
+		var formattedJob = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+		formattedJob = formattedJob + HTMLworkTitle.replace("%data%", work.jobs[job].title);
+		$(".work-entry:last").append(formattedJob);
 
-	var formattedData = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-	$(".work-entry:last").append(formattedData);
+		var formattedData = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+		$(".work-entry:last").append(formattedData);
 
-	var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-	$(".work-entry:last").append(formattedLocation);
+		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+		$(".work-entry:last").append(formattedLocation);
 
-	var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-	$(".work-entry:last").append(formattedDescription);
+		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+		$(".work-entry:last").append(formattedDescription);
+	}
 }
+
+displayWork();
+
+$(document).click(function(loc) {
+	var x = loc.pageX;
+	var y = loc.pageY;
+	logClicks(x,y)
+});
 

@@ -3,6 +3,7 @@ var bio  = {
 	"name" : "Chris Archibald",
 	"role" : "Software Engineer",
 	"contact" : {
+		"mobile"  : "650-504-5125",
 		"email" : "carchi8py@gmail.com",
 		"github" : "carchi8py",
 		"location" : "Silicon Valley"
@@ -15,6 +16,7 @@ var bio  = {
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+var formattedMobile = HTMLmobile.replace("%data%", bio.contact.mobile);
 var formattedEmail = HTMLemail.replace("%data%", bio.contact.email);
 var formattedGithub = HTMLgithub.replace("%data%", bio.contact.github);
 var formattedLocation = HTMLlocation.replace("%data%", bio.contact.location);
@@ -28,6 +30,7 @@ var formattedHTMLskills3 = HTMLskills.replace("%data%", bio.skills[3]);
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 
+$("#topContacts").append(formattedMobile);
 $("#topContacts").append(formattedEmail);
 $("#topContacts").append(formattedGithub);
 $("#topContacts").append(formattedLocation);

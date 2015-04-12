@@ -21,6 +21,34 @@ work.years = "2008-2015";
 work.city = "Sunnyvale";
 work.Description = "I did stuff";
 
+var education = {
+	"schools" : [
+		{
+			"name" : "San Jose State University",
+			"location" : "San Jose",
+			"degree" : "BS",
+			"major" : "Computer Science",
+			"minor" : "Math",
+			"dates" : "2008",
+			"url" : "sjsu.edu"
+		}
+	],
+	"onlineCourses" : [
+		{
+			"title" : "Front End Web Developer NanoDegree",
+			"school" : "Udacity",
+			"date" :  "2015",
+			"url" : "udacity.com"
+		}, 
+		{
+			"title" : "IOS swift Developer NanoDegree",
+			"school" : "Udacity",
+			"date" : "2015",
+			"url" : "udacity.com"
+		}
+	]
+}
+
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);

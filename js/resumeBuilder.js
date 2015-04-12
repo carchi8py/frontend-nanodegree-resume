@@ -52,19 +52,22 @@ var work = {
 			"employer" : "NetApp",
 			"title" : "MTS 3",
 			"location" : "Sunnyvale",
-			"dates" : "2013-Present"
+			"dates" : "2013-Present",
+			"description" : "I did stuff"
 		},
 		{
 			"employer" : "NetApp",
 			"title" : "MTS 2",
 			"location" : "Sunnyvale",
-			"dates" : "2010-2013"
+			"dates" : "2010-2013",
+			"description" : "I did more stuff"
 		},
 		{
 			"employer" : "NetApp",
 			"title" : "MTS 1",
 			"location" : "Sunnyvale",
-			"dates" : "2008-2010"
+			"dates" : "2008-2010",
+			"description" : "I did hella stuff"
 		}
 	]
 }
@@ -108,5 +111,14 @@ for (job in work.jobs) {
 	var formattedJob = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
 	formattedJob = formattedJob + HTMLworkTitle.replace("%data%", work.jobs[job].title);
 	$(".work-entry:last").append(formattedJob);
+
+	var formattedData = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+	$(".work-entry:last").append(formattedData);
+
+	var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+	$(".work-entry:last").append(formattedLocation);
+
+	var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+	$(".work-entry:last").append(formattedDescription);
 }
 

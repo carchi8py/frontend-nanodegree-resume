@@ -2,7 +2,7 @@
 var bio = {
 	"name" : "Chris Archibald",
 	"role" : "Software Developer",
-	"contacts " : {
+	"contacts" : {
 		"mobile" : "650-504-5125",
 		"email" : "carchi8py@gmail.com",
 		"github" : "carchi8py",
@@ -89,23 +89,6 @@ var projects = {
 	]
 }
 
-
-if (bio.skills.length > 0) {
-	$("#header").append(HTMLskillsStart);
-
-	var forattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-	$("#skills").append(forattedSkill);
-	forattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-	$("#skills").append(forattedSkill);
-	forattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-	$("#skills").append(forattedSkill);
-	forattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-	$("#skills").append(forattedSkill);
-
-} else {
-	console.log("Something in Skill's failed");
-}
-
 function displayWork() {
 	for (job in work.jobs) {
 		$("#workExperience").append(HTMLworkStart);
@@ -124,6 +107,48 @@ function displayWork() {
 	}
 }
 
+ var formattedName = HTMLheaderName.replace("%data%", bio.name);
+ var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+ var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+ var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+ var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+ var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+ var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+ var formattedHTMLwelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+
+ $("#header").prepend(formattedRole);
+ $("#header").prepend(formattedName);
+ 
+ $("#topContacts").append(formattedMobile);
+ $("#topContacts").append(formattedEmail);
+ $("#topContacts").append(formattedGithub);
+ $("#topContacts").append(formattedLocation);
+ 
+ $("#header").append(formattedBioPic);
+ $("#header").append(formattedHTMLwelcomeMsg);
+
+
+if (bio.skills.length > 0) {
+	$("#header").append(HTMLskillsStart);
+
+	var forattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+	$("#skills").append(forattedSkill);
+	forattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+	$("#skills").append(forattedSkill);
+	forattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+	$("#skills").append(forattedSkill);
+	forattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+	$("#skills").append(forattedSkill);
+
+} else {
+	console.log("Something in Skill's failed");
+}
+
+
+
+
+
+
 displayWork();
 
 $(document).click(function(loc) {
@@ -131,4 +156,15 @@ $(document).click(function(loc) {
 	var y = loc.pageY;
 	logClicks(x,y)
 });
+
+function inName(name) {
+	console.log(name);
+	name = name.trim().split(" ");
+	console.log(name);
+	name[1] = name[1].toUpperCase();
+	name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+
+	return name[0] + " " + name[1];
+}
+$("#main").append(internationalizeButton);
 

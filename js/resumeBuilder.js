@@ -16,7 +16,7 @@ var bio = {
 		"World Domination",
 		"ice cream"
 	],
-	"bioPic" : "images/fry.jpg" 
+	"bioPic" : "images/me.jpg" 
 }
 
 var education = {

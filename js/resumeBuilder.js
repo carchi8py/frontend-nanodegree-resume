@@ -58,21 +58,21 @@ var work = {
 			"title" : "MTS 3",
 			"location" : "Sunnyvale, CA",
 			"dates" : "2013-Present",
-			"description" : "I did stuff"
+			"description" : "Worked on: Static Analysis Tools, SonarQube"
 		},
 		{
 			"employer" : "NetApp",
 			"title" : "MTS 2",
 			"location" : "Sunnyvale, CA",
 			"dates" : "2010-2013",
-			"description" : "I did more stuff"
+			"description" : "Worked On: Reviewboard, Coverity, File Ownership, Internal Stack Overflow Clone, Line, Sonar"
 		},
 		{
 			"employer" : "NetApp",
 			"title" : "MTS 1",
 			"location" : "Sunnyvale, CA",
 			"dates" : "2008-2010",
-			"description" : "I did hella stuff"
+			"description" : "Worked On: Lint, Coverity, File Onwership"
 		}
 	]
 }
@@ -80,15 +80,21 @@ var work = {
 var projects = {
 	"projects" : [
 		{
-			"title" : "project 1",
-			"Dates" : "somedate",
-			"description" : "This was a project",
+			"title" : "Pitch Perfect",
+			"Dates" : "March 2015",
+			"description" : "Pitch Perfect is a swift iOS app that records a user's voice, and then let's the user play it back using 6 differnet filters",
 			"images" : ["images/fry.jpg"]
 		},
 		{
 			"title" : "project 2",
 			"Dates" : "somedate",
 			"description" : "This was a project",
+			"images" : ["images/fry.jpg"]
+		},
+		{
+			"title" : "Meme Me",
+			"Dates" : "April 2015",
+			"description" : "Meme Me is a swift iOS app that utiliziaze many differenet UIKit classes to create a Meme generator. The Meme Generator lets you create a Meme, and then share it with your friends, using facebook/e-mail/text message. Meme Me also save your meme's so you can go back and look at them later",
 			"images" : ["images/fry.jpg"]
 		}
 	]
@@ -142,7 +148,7 @@ work.display = function() {
 
 		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
 		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-		var formattedDate = HTMLworkDates.replace("%data%", work.jobs[job].date);
+		var formattedDate = HTMLworkDates.replace("%data%", work.jobs[job].dates);
 		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
 		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 

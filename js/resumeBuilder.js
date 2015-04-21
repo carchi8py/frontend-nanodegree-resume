@@ -28,6 +28,11 @@ var education = {
 			"major" : ["Computer Science"],
 			"dates" : "2008",
 			"url" : "sjsu.edu"
+		},
+		{
+			"name" : "San Mateo High School",
+			"location" : "San Mateo, CA",
+			"dates" : "2002"
 		}
 	],
 	"onlineCourses" : [

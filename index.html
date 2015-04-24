@@ -42,6 +42,10 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   <!-- More on helper.js in the class -->
   <script src="js/helper.js"></script>
 
+  <script src="js/arbor.js"></script>
+  <script src="js/graphics.js"></script>
+  <script src="js/renderer.js"></script>
+
   <!--
   Uncomment the <script> tag below when you're ready to add an interactive
   Google Map to your resume!
@@ -74,6 +78,42 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     </div>
     <div id="mapDiv">
       <h2>Where I've Lived and Worked</h2>
+    </div>
+    <div id="arbor" class='gray'>
+      <h2>Skill map</h2>
+      <canvas id="viewport" width="1000" height="600"></canvas>
+      <script language="javascript" type="text/javascript">
+      var sys = arbor.ParticleSystem(1000, 400,1);
+      sys.parameters({gravity:true});
+      sys.renderer = Renderer("#viewport");
+
+      var data = {
+        nodes:{
+          carchi:{'color':'red','shape':'dot','label':'Chris Archibald'},
+          ios:{'color':'green','shape':'dot','label':'iOS 8: Swift'},
+          front:{'color':'blue','shape':'dot','label':'Front End Web Development'}
+          },
+        edges:{
+        carchi:{ ios:{}, front:{} }}
+        };
+
+      sys.graft(data);
+          setTimeout(function(){
+                      var postLoadData = {
+                         nodes:{
+                           ios1:{'color':'green','shape':'dot','label':'Pitch Perfect'},
+                           ios2:{'color':'green','shape':'dot','label':'Meme Me'},
+                           front1:{'color':'blue','shape':'dot','label':'Protfolio Site'},
+                           front2:{'color':'blue','shape':'dot','label':'Online Resume'}
+                         }, 
+                         edges:{
+                              ios:{ ios1:{},ios2:{} },
+                              front:{ front1:{},front2:{} }
+                         }
+                       };
+                       sys.graft(postLoadData);
+                  },7000);
+      </script>
     </div>
     <div id="letsConnect" class='dark-gray'>
       <h2 class='orange center-text'>Let's Connect</h2>

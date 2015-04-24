@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>Test of Arbor.js</title>
+		<script src="js/jQuery.js"></script>
+		<script src="js/arbor.js"></script>
+		<script src="js/graphics.js"></script>
+		<script src="js/renderer.js"></script>
+	</head>
+	<body>
+		<canvas id="viewport" width="800" height="600"></canvas>
+		<script language="javascript" type="text/javascript">
+		var sys = arbor.ParticleSystem(1000, 400,1);
+		sys.parameters({gravity:true});
+		sys.renderer = Renderer("#viewport") ;
+		var animals = sys.addNode('Animals',{'color':'red','shape':'dot','label':'Animals'});
+		</script>
+	</body>
+</html>

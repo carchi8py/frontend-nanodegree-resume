@@ -83,7 +83,7 @@ var projects = {
 			"title" : "Pitch Perfect",
 			"Dates" : "March 2015",
 			"description" : "Pitch Perfect is a swift iOS app that records a user's voice, and then let's the user play it back using 6 differnet filters",
-			"images" : ["images/fry.jpg"]
+			"images" : ["images/1.jpg"]
 		},
 		{
 			"title" : "project 2",
@@ -95,7 +95,7 @@ var projects = {
 			"title" : "Meme Me",
 			"Dates" : "April 2015",
 			"description" : "Meme Me is a swift iOS app that utiliziaze many differenet UIKit classes to create a Meme generator. The Meme Generator lets you create a Meme, and then share it with your friends, using facebook/e-mail/text message. Meme Me also save your meme's so you can go back and look at them later",
-			"images" : ["images/fry.jpg"]
+			"images" : ["images/3.jpg"]
 		}
 	]
 }
